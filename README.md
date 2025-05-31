@@ -47,5 +47,7 @@ snakemake --profile profiles/local -c1
 This command will run the workflow locally. The results will be stored in the folder `worflow/results`. In this folder, you will find the following files:
 
 - `summary` folder: contains summary tables and figures
-- `report.html`: An automated report generated with RMarkdown
+- `report.html`: An automated report generated with RMarkdown (click <a href="workflow/results/report.html"> here</a> to read the report)
+
+
 
