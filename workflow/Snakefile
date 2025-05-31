@@ -1,0 +1,45 @@
+
+
+## ----------------------------------------------------
+## Project Name : 
+## ----------------------------------------------------
+
+
+
+## ----------------------------------------------------
+## Author Information
+## ----------------------------------------------------
+
+
+## author
+__author__ = "Hoang Dong Nguyen"
+__email__ = "nguyen.hoangdong31@gmail.com"
+
+
+## ----------------------------------------------------
+## Import Libraries and Config Files
+## ----------------------------------------------------
+
+
+import pandas as pd
+from os import listdir
+from os.path import isfile, join
+
+
+## ----------------------------------------------------
+## Initialization
+## ----------------------------------------------------
+
+# get the directory of the current snakefile file
+working_dir=workflow.basedir
+output_directory = config['output_directory']
+
+include: "rules/common.smk"
+include: "rules/rule_all_outputs.smk"    
+include: "rules/process.smk"
+
+#wildcard_constraints:
+
+rule all:
+    input:
+        rule_all_outputs()

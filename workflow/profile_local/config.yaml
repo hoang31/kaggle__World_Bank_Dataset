@@ -1,0 +1,33 @@
+
+
+########################################
+## Snakemake Parameters
+########################################
+
+
+##########
+## General Parameters
+##########
+
+local-cores: 1
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+#quiet: True
+
+##########
+## Environment Parameters
+##########
+
+use-conda: True
+conda-frontend: 'mamba'
+conda-prefix: '/mnt/Data/perso/kaggle_projects/conda_envs'
+
+use-singularity: True
+singularity-prefix: '/mnt/Data/perso/kaggle_projects/conda_envs'
+
+##########
+## Config File Parameters
+##########
+
+configfile: 'config/config.yaml' # standard config file 
