@@ -39,9 +39,13 @@ cd kaggle__World_Bank_Dataset/workflow
 snakemake --profile profiles/local -c1
 ```
 
+<br/>
+
+
+
 # Outputs
 This command will run the workflow locally. The results will be stored in the folder `worflow/results`. In this folder, you will find the following files:
 
 - `summary` folder: contains summary tables and figures
-- `report.html`: A automated report generated with RMarkdown
+- `report.html`: An automated report generated with RMarkdown
 
