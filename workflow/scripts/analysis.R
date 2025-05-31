@@ -34,7 +34,10 @@ data_dt <- fread(
 
 ## summary stats
 numerical_columns_summary <- get_summary_stats_numeric(data_dt)
+fwrite(numerical_columns_summary ,file.path(output_directory, "columns_summary_numeric.csv"))
+
 categorical_columns_summary <- get_summary_stats_category(data_dt)
+fwrite(categorical_columns_summary ,file.path(output_directory, "columns_summary_category.csv"))
 
 ## get the number of rows containing the same country
 data_dt[, n_occurence := .N, by = Country]
@@ -309,14 +312,3 @@ ggsave(
     width = 12,
     height = 20
 )
-
-
-
-
-
-
-
-
-
-print("done")
-Sys.sleep(10000)

@@ -1,0 +1,151 @@
+---
+
+title: "Project Report"
+output:
+  html_document:
+    toc: false
+params:
+  input_dir: "input_dir"
+  output_file: "output_file"
+---
+
+
+```{r, echo=F, message = FALSE}
+
+
+# Load necessary libraries
+library(tidyverse, quietly = TRUE)
+library(data.table, quietly = TRUE)
+library(DT, quietly = TRUE)
+library(plotly, quietly = TRUE)
+library(RColorBrewer, quietly = TRUE)
+library(htmltools, quietly = TRUE)
+library(knitr)
+
+## set the color palette
+palette <- c(
+    brewer.pal(8, "Dark2"),
+    brewer.pal(9, "Set1"),
+    brewer.pal(8, "Set2"),
+    brewer.pal(9, "Set3"),
+    brewer.pal(8, "Set2"),
+    brewer.pal(9, "Set1"),
+    brewer.pal(8, "Dark2"),
+    brewer.pal(9, "Set3")
+)
+
+```
+
+
+```{r, echo=F, message = FALSE}
+
+## get the date
+date <- format(Sys.Date(), '%Y-%m-%d')
+
+## get the directory path of the input
+input_dir_path <- params$input_dir
+
+## list files
+files_vec <- list.files(input_dir_path, full.names = T)
+
+```
+
+
+
+<style>
+.main-container {
+    margin-left: 25%;
+    margin-right: auto;
+}
+</style>
+
+
+<br><br><br>
+<div style="text-align: center;">
+  <img src="../readme_data/kaggle_logo.png" alt="My Logo" width="300px" height="auto" />
+</div>
+<br><br><br>
+
+<!--<div style="text-align: center;">-->
+<!--<h1>**Summary - `r date`**</h1>-->
+<!--</div>-->
+
+
+
+**Author** : Hoang Dong Nguyen\
+**Generation Date** : `r date`
+
+
+<br><br><br>
+
+
+
+
+
+# {.tabset}
+
+## **Summary Tables**
+<br><br>
+
+<div style="text-align: center;">
+
+#### **Summary Table - Numeric**
+</div>
+
+```{r, echo=F, message = FALSE}
+
+## get the summary stats - numeric
+summary_numeric_path <- grep(files_vec, pattern = "columns_summary_numeric.csv", value = T)
+summary_numeric <- fread(summary_numeric_path)
+n_cols <- ncol(summary_numeric) - 1
+summary_numeric_DT <-  datatable(
+    summary_numeric,
+    rownames = FALSE,
+    caption = "",
+    filter = "top",
+    #extensions = c('Buttons', 'RowGroup'),
+    extensions = c('Buttons'),
+    options = list(
+        pageLength = 30,
+        columnDefs = list(list(className = 'dt-center', targets = 0:n_cols)),
+        dom = 'Bfrtip',
+        buttons = c('csv', 'excel'),
+        rowGroup = list(dataSrc = 0)
+    )
+)
+summary_numeric_DT
+```
+<br><br>
+
+<div style="text-align: center;">
+
+#### **Summary Table - Category**
+</div>
+
+
+```{r, echo=F, message = FALSE}
+
+## get the summary stats - category
+summary_category_path <- grep(files_vec, pattern = "columns_summary_category.csv", value = T)
+summary_category <- fread(summary_category_path)
+n_cols <- ncol(summary_category) - 1
+summary_category_DT <-  datatable(
+    summary_category,
+    rownames = FALSE,
+    caption = "",
+    filter = "top",
+    #extensions = c('Buttons', 'RowGroup'),
+    extensions = c('Buttons'),
+    options = list(
+        pageLength = 30,
+        columnDefs = list(list(className = 'dt-center', targets = 0:n_cols)),
+        dom = 'Bfrtip',
+        buttons = c('csv', 'excel'),
+        rowGroup = list(dataSrc = 0)
+    )
+)
+summary_category_DT
+```
+
+
+## **Results**

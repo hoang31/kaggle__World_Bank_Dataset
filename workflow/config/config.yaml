@@ -4,7 +4,6 @@
 ## -------------------------------------
 
 author: 'Hoang Dong Nguyen'
-email: 'nguyen.hoangdong31@gmail.com'
 study_name: 'World Bank Dataset'
 kaggle_link: "https://www.kaggle.com/datasets/bhadramohit/world-bank-dataset?resource=download"
 
@@ -14,7 +13,7 @@ kaggle_link: "https://www.kaggle.com/datasets/bhadramohit/world-bank-dataset?res
 ## -------------------------------------
 
 ## path of the input data
-input_data_directory: '/mnt/Data/perso/kaggle_projects/World_Bank_Dataset/data'
+input_data_directory: 'data'
 
 ## output directory
 output_directory: 'results'

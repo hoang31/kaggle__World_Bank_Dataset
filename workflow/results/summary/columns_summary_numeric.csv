@@ -1,0 +1,8 @@
+column_names,Min,1stQu,Median,3rdQu,Max,Mean
+     Year,2010  ,2012  ,2014  ,2017  ,2019  ,2014  
+  GDP (USD),1.012e+12  ,5.774e+12  ,1.051e+13  ,1.503e+13  ,1.998e+13  ,1.057e+13  
+  Population,9.970e+06  ,3.534e+08  ,7.217e+08  ,1.091e+09  ,1.498e+09  ,7.388e+08  
+Access to Electricity (%),50.12  ,60.31  ,70.28  ,86.30  ,99.76  ,72.88  
+CO2 Emissions (metric tons per capita), 0.810  , 4.883  , 9.745  ,15.623  ,19.840  ,10.058  
+Life Expectancy,50.50  ,57.77  ,64.90  ,74.50  ,84.90  ,66.32  
+Unemployment Rate (%), 2.27  , 6.81  ,13.47  ,18.54  ,24.79  ,13.27  

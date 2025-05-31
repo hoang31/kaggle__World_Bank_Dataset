@@ -1,16 +1,14 @@
 name:
   r
-
 channels:
   - conda-forge
   - bioconda
-
 dependencies:
   - r-data.table
   - r-tidyverse
-  - r-rcolorbrewer
   - r-svglite
-  - r-ggrepel
-  - r-desctools
-  - r-ggpubr
-  - r-patchwork
+  - r-rcolorbrewer
+  - r-markdown
+  - r-dt
+  - r-plotly
+  - r-htmltools
